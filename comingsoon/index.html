@@ -24,9 +24,14 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
+        /* 로고 배경을 투명하게 처리하는 스타일 */
         .logo-container img {
-            max-height: 40px;
+            max-height: 50px;
             width: auto;
+            /* 배경이 검은색인 경우 검은색을 날려버리는 설정 */
+            mix-blend-mode: screen; 
+            /* 이미지의 대비를 살짝 높여서 더 선명하게 보이게 함 */
+            filter: contrast(1.1) brightness(1.1);
         }
     </style>
 </head>
@@ -35,7 +40,6 @@
     <!-- Header / Logo Section -->
     <header class="p-6 md:p-10 w-full flex justify-between items-center z-10">
         <div class="logo-container">
-            <!-- 유저가 제공한 로고 이미지 -->
             <img src="https://photo.opencard.uk/1776603922620.png" 
                  alt="OpenCard Logo" 
                  onerror="this.src='https://via.placeholder.com/150x40?text=OpenCard'">
